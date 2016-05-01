@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using AnnetKatan.Repository;
 
 namespace AnnetKatan.Controllers
@@ -38,36 +37,36 @@ namespace AnnetKatan.Controllers
     {
       var images = this.imageRepository.ListImages(HomeDirectoryName);
 
-      return View(images);
+      return this.View(images);
     }
 
     public ActionResult About()
     {
       var image = this.imageRepository.GetImage(AboutDirectoryName, "Annet-Katan.jpg");
 
-      return View(image);
+      return this.View(image);
     }
 
     public ActionResult Portfolio()
     {
       var images = this.imageRepository.ListImages(PortfolioDirectoryName);
 
-      return View(images);
+      return this.View(images);
     }
 
     public ActionResult Pricing()
     {
-      return View();
+      return this.View();
     }
 
     public ActionResult Shop()
     {
-      return View();
+      return this.View();
     }
 
     public ActionResult Contact()
     {
-      return View();
+      return this.View();
     }
   }
 }

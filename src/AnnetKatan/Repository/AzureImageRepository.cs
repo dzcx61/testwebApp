@@ -40,7 +40,7 @@ namespace AnnetKatan.Repository
     public AzureImageRepository(string containerName)
     {
       CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(StorageConnectionStringAppSetting));
-      blobClient = storageAccount.CreateCloudBlobClient();
+      this.blobClient = storageAccount.CreateCloudBlobClient();
 
       this.containerName = containerName;
       this.customDomain = CloudConfigurationManager.GetSetting(StorageCustomDomainAppSetting);
@@ -54,12 +54,12 @@ namespace AnnetKatan.Repository
     /// <returns>The specified image from the directory.</returns>
     public Image GetImage(string directoryName, string imageName)
     {
-      CloudBlobContainer container = blobClient.GetContainerReference(this.containerName);
+      CloudBlobContainer container = this.blobClient.GetContainerReference(this.containerName);
 
-      string blobName = string.Format("{0}/{1}", directoryName, imageName);
+      string blobName = $"{directoryName}/{imageName}";
       CloudBlockBlob blob= container.GetBlockBlobReference(blobName);
 
-      return new Image(string.Format("http://{0}{1}", this.customDomain, blob.Uri.AbsolutePath));
+      return new Image($"http://{this.customDomain}{blob.Uri.AbsolutePath}");
     }
 
     /// <summary>
@@ -69,17 +69,11 @@ namespace AnnetKatan.Repository
     /// <returns>List of the images from the specified directory.</returns>
     public ICollection<Image> ListImages(string directoryName)
     {
-      CloudBlobContainer container = blobClient.GetContainerReference(this.containerName);
+      CloudBlobContainer container = this.blobClient.GetContainerReference(this.containerName);
 
       var blobList = container.ListBlobs(directoryName, true).Cast<ICloudBlob>();
-      
-      ICollection<Image> images = new List<Image>();
-      foreach (var blob in blobList)
-      {
-        images.Add(new Image(string.Format("http://{0}{1}", this.customDomain, blob.Uri.AbsolutePath)));
-      }
 
-      return images;
+      return blobList.Select(blob => new Image($"http://{this.customDomain}{blob.Uri.AbsolutePath}")).ToList();
     }
   }
 }
