@@ -18,6 +18,12 @@ namespace AnnetKatan
           url: "{controller}/{action}/{id}",
           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
       );
+
+      routes.MapRoute(
+          name: "Portfolio",
+          url: "{controller}/{action}",
+          defaults: new { controller = "Portfolio", action = "Index" }
+      );
     }
   }
 }
