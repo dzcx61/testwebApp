@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<AnnetKatan.Models.Image>
 
 @{
-  ViewBag.Title = "Annet Katan | Photography & Design";
-  ViewBag.MenuHome = "active";
+  ViewBag.Title = "Portfolio";
+  ViewBag.MenuPortfolio = "active";
 }
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     @foreach (var image in Model)
+    {
+      if (Model.First().Equals(image))
       {
-        if (Model.First().Equals(image))
-        {
         <div class="item active">
           <img class="img-responsive img-thumbnail img-noradius" src=@image.Url alt="" />
         </div>
