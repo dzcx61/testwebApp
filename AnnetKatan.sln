@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1D6AF0EF-9074-4DF3-A606-1576903B39FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6FD0ED75-21FA-48E9-A8F0-6A5ECDBFC16D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73D96495-C7D5-4AAB-8453-CA41F2DFB1EE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7A901389-E042-498E-849F-9936CD3BD67B}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AnnetKatan", "src\AnnetKatan\AnnetKatan.xproj", "{2D6B5F89-099F-4CE1-B047-9B08BEDECC89}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AnnetKatan", "src\AnnetKatan\AnnetKatan.xproj", "{5424C9E1-939A-4ECA-AAF7-A56496332672}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,15 +18,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D6B5F89-099F-4CE1-B047-9B08BEDECC89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D6B5F89-099F-4CE1-B047-9B08BEDECC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D6B5F89-099F-4CE1-B047-9B08BEDECC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D6B5F89-099F-4CE1-B047-9B08BEDECC89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5424C9E1-939A-4ECA-AAF7-A56496332672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5424C9E1-939A-4ECA-AAF7-A56496332672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5424C9E1-939A-4ECA-AAF7-A56496332672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5424C9E1-939A-4ECA-AAF7-A56496332672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2D6B5F89-099F-4CE1-B047-9B08BEDECC89} = {1D6AF0EF-9074-4DF3-A606-1576903B39FB}
+		{5424C9E1-939A-4ECA-AAF7-A56496332672} = {6FD0ED75-21FA-48E9-A8F0-6A5ECDBFC16D}
 	EndGlobalSection
 EndGlobal
