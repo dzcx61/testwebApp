@@ -15,21 +15,20 @@
           asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
   </environment>
+
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">AnnetKatan</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
+
+  <div class="container">
+    <div class="header">
+      <div class="masthead clearfix">
+        <div class="masthead-brand">
+          <div class="brand-lg text-nowrap"><a asp-area="" asp-controller="Home" asp-action="Index">Annet Katan</a></div>
+          <div class="brand-sm text-nowrap">Photography &amp; Design</div>
+        </div>
+        
+
+        <ul class="nav masthead-nav">
           <li><a asp-area="" asp-controller="Home" asp-action="About">about</a></li>
           <li><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
           <li><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
@@ -37,14 +36,26 @@
         </ul>
       </div>
     </div>
-  </div>
-  <div class="container body-content">
-    @RenderBody()
-    <hr />
-    <footer>
-      <p>&copy; @DateTime.Now.Year - AnnetKatan</p>
-    </footer>
-  </div>
+
+    <div class="jumbotron">
+      @RenderBody()
+    </div>
+
+    <div class="footer">
+      <div class="masthead clearfix">
+        <div class="masthead-brand">&copy; @DateTime.Now.Year - Annet Katan</div>
+        <div class="social">
+          <ul class="nav masthead-nav">
+            <li><a class="social" href="https://www.facebook.com/AnnetKatanPhotographer" target="_blank">b</a></li>
+            <li><a class="social" href="http://instagram.com/annet.katan.photographer" target="_blank">x</a></li>
+            <li><a class="social" href="https://www.youtube.com/channel/UCRasIeJOgHnXwh94tGNUKbA" target="_blank">r</a></li>
+            <li><a class="social" href="http://www.linkedin.com/pub/annet-katan/31/775/645" target="_blank">j</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- /container -->
 
   <environment names="Development">
     <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -52,7 +63,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
   </environment>
   <environment names="Staging,Production">
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.3.min.js"
             asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
             asp-fallback-test="window.jQuery">
     </script>
