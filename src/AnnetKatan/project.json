@@ -1,6 +1,6 @@
-﻿{
+{
   "dependencies": {
-    "BundlerMinifier.Core": "2.1.258",
+    "BundlerMinifier.Core": "2.2.281",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
@@ -17,7 +17,7 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "WindowsAzure.Storage": "7.1.2"
+    "WindowsAzure.Storage": "7.2.0"
   },
 
   "tools": {
