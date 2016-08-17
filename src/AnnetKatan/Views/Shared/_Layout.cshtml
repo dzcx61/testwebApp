@@ -29,10 +29,10 @@
         
 
         <ul class="nav masthead-nav">
-          <li><a asp-area="" asp-controller="Home" asp-action="About">about</a></li>
-          <li><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
-          <li><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
-          <li><a asp-area="" asp-controller="Home" asp-action="Contact">contact</a></li>
+          <li class="@ViewData["MenuAbout"]"><a asp-controller="Home" asp-action="About">about</a></li>
+          <li class="@ViewData["MenuPortfolio"]" ><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
+          <li class="@ViewData["MenuPricing"]"><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
+          <li class="@ViewData["MenuContact"]"><a asp-area="" asp-controller="Home" asp-action="Contact">contact</a></li>
         </ul>
       </div>
     </div>
