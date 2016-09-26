@@ -55,20 +55,20 @@ namespace AnnetKatan
 
       app.UseMvc(routes =>
       {
-          routes.MapRoute(
-                    name: "default_full",
-                    template: "{controller}/{action}",
-                    defaults: new { controller = "Home", action = "Index" });
+        routes.MapRoute(
+          name: "default_full",
+          template: "{controller}/{action}",
+          defaults: new { controller = "Home", action = "Index" });
 
-          routes.MapRoute(
-                  name: "default_simple",
-                  template: "{action}",
-                  defaults: new { controller = "Home" });
+        routes.MapRoute(
+          name: "default_simple",
+          template: "{action}",
+          defaults: new { controller = "Home" });
 
-          routes.MapRoute(
-                    name: "portfolio_full",
-                    template: "{controller}/{action}",
-                    defaults: new { controller = "Portfolio", action = "Index" });
+        routes.MapRoute(
+          name: "portfolio_full",
+          template: "{controller}/{action}",
+          defaults: new { controller = "Portfolio", action = "Index" });
       });
     }
   }
