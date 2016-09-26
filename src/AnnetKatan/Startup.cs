@@ -46,8 +46,10 @@ namespace AnnetKatan
       }
       else
       {
-        app.UseExceptionHandler("/Home/Error");
+        app.UseExceptionHandler("/Error/Internal");
       }
+
+      app.UseStatusCodePagesWithRedirects("/Error/PageNotFound");
 
       app.UseStaticFiles();
 
