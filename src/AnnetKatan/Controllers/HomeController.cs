@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AnnetKatan.Repository;
 using Microsoft.AspNetCore.Mvc;
-using AnnetKatan.Repository;
 using Microsoft.Extensions.Options;
 
 namespace AnnetKatan.Controllers

@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AnnetKatan.Models;
-using Microsoft.Azure;
+﻿using AnnetKatan.Models;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AnnetKatan.Repository
 {
