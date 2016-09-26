@@ -64,6 +64,11 @@ namespace AnnetKatan
                   name: "default_simple",
                   template: "{action}",
                   defaults: new { controller = "Home" });
+
+          routes.MapRoute(
+                    name: "portfolio_full",
+                    template: "{controller}/{action}",
+                    defaults: new { controller = "Portfolio", action = "Index" });
       });
     }
   }
