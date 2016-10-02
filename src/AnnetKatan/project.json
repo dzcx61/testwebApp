@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "BundlerMinifier.Core": "2.2.281",
+    "Microsoft.ApplicationInsights.AspNetCore": "1.0.2",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Razor.Tools": {

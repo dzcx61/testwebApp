@@ -14,6 +14,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationInsightsResourceId>/subscriptions/885b2a4e-05a1-4bbf-8f6c-64de960a47f2/resourcegroups/Annet-Katan/providers/microsoft.insights/components/Annet-Katan</ApplicationInsightsResourceId>
   </PropertyGroup>
   <ItemGroup>
     <DnxInvisibleContent Include="bower.json" />
