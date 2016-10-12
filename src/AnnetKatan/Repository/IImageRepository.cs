@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using AnnetKatan.Models;
+﻿using AnnetKatan.Models;
+using System.Collections.Generic;
 
 namespace AnnetKatan.Repository
 {

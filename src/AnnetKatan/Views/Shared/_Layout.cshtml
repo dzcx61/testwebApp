@@ -1,51 +1,48 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
 
-  <title>@ViewBag.Title</title>
+  <environment names="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+  </environment>
+  <environment names="Staging,Production">
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+  </environment>
 
-  @Styles.Render("~/Content/css")
-  @Scripts.Render("~/bundles/modernizr")
-  
-  <!--
-  To collect end-user usage analytics about your application,
-  insert the following script into each page you want to track.
-  Place this code immediately before the closing </head> tag,
-  and before any other scripts. Your first data will appear
-  automatically in just a few seconds.
-  -->
   <script type="text/javascript">
-  var appInsights=window.appInsights||function(config){
-    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
-    }({
-        instrumentationKey:"b7d0a13c-47e3-4145-bc20-e0d3280cc503"
-    });
+    var appInsights = window.appInsights || function (config) {
+      function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+      }({
+        instrumentationKey: "{Azure-Application-Insights-Key-Here}"
+      });
 
-    window.appInsights=appInsights;
-    appInsights.trackPageView();
+      window.appInsights = appInsights;
+      appInsights.trackPageView();
   </script>
 </head>
-
 <body>
-  
+
   <div class="container">
     <div class="header">
       <div class="masthead clearfix">
         <div class="masthead-brand">
-          <div class="brand-lg text-nowrap">@Html.ActionLink("Annet Katan", "Index", "Home")</div>
+          <div class="brand-lg text-nowrap"><a asp-area="" asp-controller="Home" asp-action="Index">Annet Katan</a></div>
           <div class="brand-sm text-nowrap">Photography &amp; Design</div>
         </div>
 
+
         <ul class="nav masthead-nav">
-          <li class="@ViewBag.MenuAbout">@Html.ActionLink("about", "About", "Home")</li>
-          <li class="@ViewBag.MenuPortfolio">@Html.ActionLink("portfolio", "Portfolio", "Home")</li>
-          <li class="@ViewBag.MenuPricing">@Html.ActionLink("pricing", "Pricing", "Home")</li>
-          <li class="@ViewBag.MenuContact">@Html.ActionLink("contact", "Contact", "Home")</li>
+          <li class="@ViewData["MenuAbout"]"><a asp-controller="Home" asp-action="About">about</a></li>
+          <li class="@ViewData["MenuPortfolio"]"><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
+          <li class="@ViewData["MenuPricing"]"><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
+          <li class="@ViewData["MenuContact"]"><a asp-area="" asp-controller="Home" asp-action="Contact">contact</a></li>
         </ul>
       </div>
     </div>
@@ -60,20 +57,33 @@
         <div class="social">
           <ul class="nav masthead-nav">
             <li><a class="social" href="https://www.facebook.com/AnnetKatanPhotographer" target="_blank">b</a></li>
-            <li><a class="social" href="http://instagram.com/annet.katan.photographer" target="_blank">x</a></li>
+            <li><a class="social" href="https://www.instagram.com/annet.katan.photographer/" target="_blank">x</a></li>
             <li><a class="social" href="https://www.youtube.com/channel/UCRasIeJOgHnXwh94tGNUKbA" target="_blank">r</a></li>
-            <li><a class="social" href="http://www.linkedin.com/pub/annet-katan/31/775/645" target="_blank">j</a></li>
+            <li><a class="social" href="https://www.linkedin.com/in/annetkatan" target="_blank">j</a></li>
           </ul>
         </div>
       </div>
     </div>
 
   </div> <!-- /container -->
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
 
-  @Scripts.Render("~/bundles/jquery")
-  @Scripts.Render("~/bundles/bootstrap")
+  <environment names="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+  </environment>
+  <environment names="Staging,Production">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.3.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+    </script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+  </environment>
+
   @RenderSection("scripts", required: false)
 </body>
 </html>

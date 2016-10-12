@@ -1,14 +1,13 @@
-﻿using System.Web.Mvc;
-using AnnetKatan.Repository;
+﻿using AnnetKatan.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace AnnetKatan.Controllers
 {
-  /// <summary>
-  /// Defines the default Home controller.
-  /// </summary>
-  [OutputCache(CacheProfile = "CacheOneDay")]
   public class HomeController : Controller
   {
+    private readonly AppSettings appSettings;
+
     private const string ContainerName = "images";
     private const string HomeDirectoryName = "home";
     private const string AboutDirectoryName = "about";
@@ -19,54 +18,60 @@ namespace AnnetKatan.Controllers
     /// <summary>
     /// Initializes a new instance of the <see cref="HomeController"/> class.
     /// </summary>
-    public HomeController()
+    public HomeController(IOptions<AppSettings> appSettings)
     {
-      this.imageRepository = new AzureImageRepository(ContainerName);
+      this.appSettings = appSettings.Value;
+      this.imageRepository = new AzureImageRepository(this.appSettings.AzureStorageConnectionString, this.appSettings.AzureStorageCustomDomain, ContainerName);
     }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="HomeController"/> class.
     /// </summary>
     /// <param name="imageRepository">The image repository.</param>
-    public HomeController(IImageRepository imageRepository)
-    {
-      this.imageRepository = imageRepository;
-    }
+    //public HomeController(IImageRepository imageRepository)
+    //{
+    //  this.imageRepository = imageRepository;
+    //}
 
-    public ActionResult Index()
+    public IActionResult Index()
     {
       var images = this.imageRepository.ListImages(HomeDirectoryName);
 
-      return this.View(images);
+      return View(images);
     }
 
-    public ActionResult About()
+    public IActionResult About()
     {
       var image = this.imageRepository.GetImage(AboutDirectoryName, "Annet-Katan.jpg");
 
-      return this.View(image);
+      return View(image);
     }
 
-    public ActionResult Portfolio()
+    public IActionResult Portfolio()
     {
       var images = this.imageRepository.ListImages(PortfolioDirectoryName);
 
-      return this.View(images);
+      return View(images);
     }
 
-    public ActionResult Pricing()
+    public IActionResult Pricing()
     {
-      return this.View();
+      return View();
     }
 
-    public ActionResult Shop()
+    public IActionResult Shop()
     {
-      return this.View();
+      return View();
     }
 
-    public ActionResult Contact()
+    public IActionResult Contact()
     {
-      return this.View();
+      return View();
+    }
+
+    public IActionResult Error()
+    {
+      return View();
     }
   }
 }

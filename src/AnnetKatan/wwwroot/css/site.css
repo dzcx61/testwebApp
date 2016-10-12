@@ -1,0 +1,298 @@
+/* OBU: Custom size for background image */
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+/* OBU: Custom links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* OBU: Higlight links inside white text */
+.text-white > a {
+  color: #a9a9a9;
+}
+.text-white a:hover,
+.text-white a:focus {
+  color: #a9a9a9;
+  color: rgba(255,255,255,0.25);
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  /* OBU: set background image. */
+  background-image: url("../images/Background-1x.jpg");
+  background-position: center;
+  -ms-background-size: cover;
+  background-size: cover;
+
+  /*
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  */ 
+
+  /* OBU: set font family. */
+  font-family: "Century Gothic", "Century Gothic Custom";
+  color: #fff;
+  -ms-text-shadow: 0 1px 3px #000000;
+  -ms-text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px #000000;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  text-align: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 19px; 
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* OBU: Custom brand style */
+.brand-lg {
+  font-size: 30px;
+}
+.brand-sm {
+  font-size: 10px;
+  letter-spacing: .37em;
+
+  margin-top: -7px; 
+  margin-bottom: 19px; 
+}
+
+
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  /*border-bottom: 1px solid #e5e5e5;*/
+
+  /* OBU: Set background with opacity */
+  background-color: #282320;
+  background-color: rgba(40,35,32,0.8);
+}
+
+.jumbotron-inner {
+  -ms-opacity: 1;
+  opacity: 1;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Remove border radius from an image */
+.img-noradius {
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+.cover .btn-lg {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.btn-default, .btn-default:hover, .btn-default:focus {
+    color: #333;
+    text-shadow: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Social buttons on a footer */
+.social > ul > li > a {
+  /* Set body color */
+  color: #fff;
+  /* Draw circle */
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 36px;
+  height: 36px;
+  /* Stop padding and margin */
+  padding: 0;
+  margin-left: 0; 
+}
+.social > ul > li > a:hover,
+.social > ul > li > a:focus {
+  /* Invert colors */
+  color: #a9a9a9;
+  background-color:  #fff;
+  /* Stop text shadow */
+  -ms-text-shadow: none;
+  text-shadow: none;
+}
+
+.social {
+  font-family: 'socicon' !important;
+  font-weight: normal !important; 
+  font-size: 20px !important;
+  text-align: center;
+  line-height: 36px;
+}
+
+/* Customize container */
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* Responsive: Extra small devices (phones and down) */
+@media screen and (max-width: 767px) {
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    margin-bottom: 0;
+
+    padding: 20px; 
+  }
+  
+  .jumbotron p {
+    font-size: 18px;
+  }
+
+  .masthead {
+      margin-bottom: 19px;
+  } 
+}
+
+/* Set retina images */
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+  body {
+    background-image: url("../images/Background-2x.jpg");
+  }
+
+  /* Customize container for retina display */
+  .container {
+    max-width: 840px;
+  }
+}
+
+/* Set Century Gothic free web font */
+@font-face {
+  font-family: 'Century Gothic Custom';
+  src: url("../fonts/gothic.eot");
+  src: url("../fonts/gothic.woff") format('woff'), 
+       url("../fonts/gothic.ttf") format('truetype');
+}
+
+/* Set social font */
+@font-face {
+  font-family: 'socicon';
+  src: url("../fonts/socicon-webfont.eot");
+  src: url("../fonts/socicon-webfont.eot?#iefix") format('embedded-opentype'),
+       url("../fonts/socicon-webfont.woff") format('woff'),
+       url("../fonts/socicon-webfont.ttf") format('truetype'),
+       url("../fonts/socicon-webfont.svg#sociconregular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+
+/*
+ * Header
+ */
+.masthead-brand {
+  /*margin-top: 10px;*/
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+/*.masthead-nav > li + li {
+  margin-left: 20px;
+}*/
+.masthead-nav > li > a {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+
+  /* Handle the widths */
+  .masthead{
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}

@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AnnetKatan.Models;
-using Microsoft.Azure;
+﻿using AnnetKatan.Models;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AnnetKatan.Repository
 {
@@ -37,13 +36,13 @@ namespace AnnetKatan.Repository
     /// </summary>
     private readonly string customDomain;
 
-    public AzureImageRepository(string containerName)
+    public AzureImageRepository(string storageConnectionString, string storageCustomDomain, string containerName)
     {
-      CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(StorageConnectionStringAppSetting));
+      CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString);
       this.blobClient = storageAccount.CreateCloudBlobClient();
 
       this.containerName = containerName;
-      this.customDomain = CloudConfigurationManager.GetSetting(StorageCustomDomainAppSetting);
+      this.customDomain = storageCustomDomain;
     }
 
     /// <summary>
