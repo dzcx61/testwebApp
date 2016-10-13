@@ -1,11 +1,4 @@
 #---------------------------------#
-#    environment configuration    #
-#---------------------------------#
-
-# Build worker image (VM template)
-image: Visual Studio 2015 - GCE
-
-#---------------------------------#
 #       build configuration       #
 #---------------------------------#
 
@@ -14,4 +7,4 @@ configuration: Release
 
 # Restore NuGet packages before running MSBuild
 before_build:
-  - nuget restore .\AnnetKatan.sln
+  - dotnet restore
