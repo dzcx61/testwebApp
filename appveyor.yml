@@ -1,0 +1,10 @@
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+# Restore NuGet packages before running MSBuild
+before_build:
+  - nuget restore .\AnnetKatan.sln
