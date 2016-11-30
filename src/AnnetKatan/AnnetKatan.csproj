@@ -21,7 +21,7 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NET.Sdk.Web">
-      <Version>1.0.0-alpha-20161104-2</Version>
+      <Version>1.0.0-alpha-20161104-2-112</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="BundlerMinifier.Core">
