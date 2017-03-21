@@ -18,7 +18,7 @@ namespace AnnetKatan
       if (env.IsDevelopment())
       {
         // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-        builder.AddUserSecrets();
+        builder.AddUserSecrets("1d73293a-0a5d-4111-a8f4-74d7edfc8f9c");
       }
 
       builder.AddEnvironmentVariables();
