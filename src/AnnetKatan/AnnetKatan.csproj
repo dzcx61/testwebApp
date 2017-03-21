@@ -2,20 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
-    <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>AnnetKatan</AssemblyName>
-    <OutputType>Exe</OutputType>
-    <PackageId>AnnetKatan</PackageId>
+    <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
     <UserSecretsId>1d73293a-0a5d-4111-a8f4-74d7edfc8f9c</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Update="wwwroot\**\*;Views\**\*;Areas\**\Views">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="BundlerMinifier.Core" Version="2.4.337" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -34,15 +23,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="8.1.1" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
-
-  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
-    <Exec Command="bower install" />
-    <Exec Command="dotnet bundle" />
-  </Target>
-
+  
 </Project>
