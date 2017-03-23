@@ -4,6 +4,8 @@
     <TargetFramework>net462</TargetFramework>
     <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
     <UserSecretsId>1d73293a-0a5d-4111-a8f4-74d7edfc8f9c</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/885b2a4e-05a1-4bbf-8f6c-64de960a47f2/resourcegroups/Annet-Katan/providers/microsoft.insights/components/annet-katan</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/885b2a4e-05a1-4bbf-8f6c-64de960a47f2/resourcegroups/Annet-Katan/providers/microsoft.insights/components/annet-katan</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BundlerMinifier.Core" Version="2.4.337" />
@@ -26,6 +28,9 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References" />
   </ItemGroup>
   
 </Project>
