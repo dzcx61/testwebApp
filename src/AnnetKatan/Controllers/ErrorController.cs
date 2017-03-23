@@ -1,5 +1,6 @@
 ﻿using AnnetKatan.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace AnnetKatan.Controllers
@@ -9,6 +10,7 @@ namespace AnnetKatan.Controllers
   /// </summary>
   public class ErrorController : Controller
   {
+    private readonly ILogger logger;
     private readonly AppSettings appSettings;
 
     private const string ContainerName = "images";
@@ -19,8 +21,9 @@ namespace AnnetKatan.Controllers
     /// <summary>
     /// Initializes a new instance of the <see cref="HomeController"/> class.
     /// </summary>
-    public ErrorController(IOptions<AppSettings> appSettings)
+    public ErrorController(IOptions<AppSettings> appSettings, ILogger<ErrorController> logger)
     {
+      this.logger = logger;
       this.appSettings = appSettings.Value;
       this.imageRepository = new AzureImageRepository(this.appSettings.AzureStorageConnectionString, this.appSettings.AzureStorageCustomDomain, ContainerName);
     }
