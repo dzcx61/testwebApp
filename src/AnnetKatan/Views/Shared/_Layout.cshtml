@@ -22,22 +22,27 @@
 <body>
 
   <div class="container">
-    <div class="header">
-      <div class="masthead clearfix">
-        <div class="masthead-brand">
-          <div class="brand-lg text-nowrap"><a asp-area="" asp-controller="Home" asp-action="Index">Annet Katan</a></div>
-          <div class="brand-sm text-nowrap">Photography &amp; Design</div>
+
+    <cache expires-after="@TimeSpan.FromDays(1)">
+
+      <div class="header">
+        <div class="masthead clearfix">
+          <div class="masthead-brand">
+            <div class="brand-lg text-nowrap"><a asp-area="" asp-controller="Home" asp-action="Index">Annet Katan</a></div>
+            <div class="brand-sm text-nowrap">Photography &amp; Design</div>
+          </div>
+
+
+          <ul class="nav masthead-nav">
+            <li class="@ViewData["MenuAbout"]"><a asp-controller="Home" asp-action="About">about</a></li>
+            <li class="@ViewData["MenuPortfolio"]"><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
+            <li class="@ViewData["MenuPricing"]"><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
+            <li class="@ViewData["MenuContact"]"><a asp-area="" asp-controller="Home" asp-action="Contact">contact</a></li>
+          </ul>
         </div>
-
-
-        <ul class="nav masthead-nav">
-          <li class="@ViewData["MenuAbout"]"><a asp-controller="Home" asp-action="About">about</a></li>
-          <li class="@ViewData["MenuPortfolio"]"><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
-          <li class="@ViewData["MenuPricing"]"><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
-          <li class="@ViewData["MenuContact"]"><a asp-area="" asp-controller="Home" asp-action="Contact">contact</a></li>
-        </ul>
       </div>
-    </div>
+
+    </cache>
 
     <div class="jumbotron">
       @RenderBody()
