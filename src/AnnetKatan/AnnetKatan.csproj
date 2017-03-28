@@ -7,6 +7,10 @@
     <ApplicationInsightsResourceId>/subscriptions/885b2a4e-05a1-4bbf-8f6c-64de960a47f2/resourcegroups/Annet-Katan/providers/microsoft.insights/components/annet-katan</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/885b2a4e-05a1-4bbf-8f6c-64de960a47f2/resourcegroups/Annet-Katan/providers/microsoft.insights/components/annet-katan</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\robots.txt" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BundlerMinifier.Core" Version="2.4.337" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
