@@ -32,7 +32,8 @@ umdMiddle = "\t} else if (typeof module === \"object\" && module.exports) {\n" +
 	"\t}\n" +
 	"}(function( $ ) {\n\n";
 
-umdEnd = "\n}));";
+umdEnd = "return $;" +
+	"\n}));";
 
 umdStandardDefine = "\t\tdefine( [\"jquery\"], factory );\n";
 umdAdditionalDefine = "\t\tdefine( [\"jquery\", \"./jquery.validate\"], factory );\n";
@@ -75,7 +76,7 @@ grunt.initConfig( {
 				"<%= grunt.template.today('m/d/yyyy') %>\n" +
 				" * <%= pkg.homepage %>\n" +
 				" * Copyright (c) <%= grunt.template.today('yyyy') %> <%= pkg.author.name %>;" +
-				" Licensed <%= _.pluck(pkg.licenses, 'type').join(', ') %> */\n"
+				" Licensed <%= _.map(pkg.licenses, 'type').join(', ') %> */\n"
 		},
 		dist: {
 			files: {

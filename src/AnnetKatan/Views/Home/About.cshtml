@@ -11,4 +11,8 @@
 <p>My inspiration comes from people I meet, warm smiles, soulful stories over a cup of coffee and incredible places. These days photography is an integral part of our lives. With photography we can make our incredible stories, wonderful moments - magic moments.</p>
 <p>Let's make magic moments together.</p>
 
-<img class="img-responsive img-thumbnail img-noradius" src=@Model.Url>
+<cache expires-after="@TimeSpan.FromDays(1)">
+
+  <img class="img-responsive img-thumbnail img-noradius" src=@Model.Url>
+
+</cache>

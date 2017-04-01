@@ -14,7 +14,8 @@ namespace AnnetKatan
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
+                .UseApplicationInsights()
+                .UseAzureAppServices()
                 .UseStartup<Startup>()
                 .Build();
 

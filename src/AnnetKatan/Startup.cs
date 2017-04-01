@@ -13,8 +13,15 @@ namespace AnnetKatan
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-          .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-          .AddEnvironmentVariables();
+          .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+      if (env.IsDevelopment())
+      {
+        // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
+        builder.AddUserSecrets("1d73293a-0a5d-4111-a8f4-74d7edfc8f9c");
+      }
+
+      builder.AddEnvironmentVariables();
       Configuration = builder.Build();
     }
 
@@ -34,6 +41,7 @@ namespace AnnetKatan
     {
       loggerFactory.AddConsole(Configuration.GetSection("Logging"));
       loggerFactory.AddDebug();
+      loggerFactory.AddAzureWebAppDiagnostics();
 
       if (env.IsDevelopment())
       {
