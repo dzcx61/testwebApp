@@ -1,4 +1,4 @@
-# Annet Katan | Photography
+# Annet Katan Photography
 
 Photography by Annet Katan.
 
