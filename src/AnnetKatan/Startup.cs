@@ -46,6 +46,7 @@ namespace AnnetKatan
       }
       else
       {
+        loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Information);
         app.UseExceptionHandler("/Error/Internal");
       }
 
