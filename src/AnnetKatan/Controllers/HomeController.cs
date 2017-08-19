@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Threading.Tasks;
 
 namespace AnnetKatan.Controllers
 {
@@ -36,9 +37,9 @@ namespace AnnetKatan.Controllers
     //  this.imageRepository = imageRepository;
     //}
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-      var images = this.imageRepository.ListImages(HomeDirectoryName);
+      var images = await this.imageRepository.ListImagesAsync(HomeDirectoryName);
 
       return View(images);
     }
@@ -50,9 +51,9 @@ namespace AnnetKatan.Controllers
       return View(image);
     }
 
-    public IActionResult Portfolio()
+    public async Task<IActionResult> Portfolio()
     {
-      var images = this.imageRepository.ListImages(PortfolioDirectoryName);
+      var images = await this.imageRepository.ListImagesAsync(PortfolioDirectoryName);
 
       return View(images);
     }
