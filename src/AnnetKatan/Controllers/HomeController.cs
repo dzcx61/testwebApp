@@ -26,15 +26,6 @@ namespace AnnetKatan.Controllers
       this.imageRepository = new AzureImageRepository(this.appSettings.AzureStorageConnectionString, this.appSettings.AzureStorageCustomDomain, ContainerName);
     }
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="HomeController"/> class.
-    /// </summary>
-    /// <param name="imageRepository">The image repository.</param>
-    //public HomeController(IImageRepository imageRepository)
-    //{
-    //  this.imageRepository = imageRepository;
-    //}
-
     public async Task<IActionResult> Index()
     {
       var images = await this.imageRepository.ListImagesAsync(HomeDirectoryName);
