@@ -7,14 +7,17 @@
     <ApplicationInsightsResourceId>/subscriptions/885b2a4e-05a1-4bbf-8f6c-64de960a47f2/resourcegroups/Annet-Katan/providers/microsoft.insights/components/annet-katan</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/885b2a4e-05a1-4bbf-8f6c-64de960a47f2/resourcegroups/Annet-Katan/providers/microsoft.insights/components/annet-katan</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="8.3.0" />
   </ItemGroup>
+  
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
+
   <ItemGroup>
     <WCFMetadata Include="Connected Services" />
   </ItemGroup>
