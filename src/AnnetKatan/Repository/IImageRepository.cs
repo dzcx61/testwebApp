@@ -1,5 +1,6 @@
 ﻿using AnnetKatan.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AnnetKatan.Repository
 {
@@ -21,6 +22,6 @@ namespace AnnetKatan.Repository
     /// </summary>
     /// <param name="directoryName">Name of the directory.</param>
     /// <returns>List of the images from the specified directory.</returns>
-    ICollection<Image> ListImages(string directoryName);
+    Task<ICollection<Image>> ListImagesAsync(string directoryName);
   }
 }

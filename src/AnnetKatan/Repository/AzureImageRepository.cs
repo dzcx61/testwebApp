@@ -2,7 +2,7 @@
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace AnnetKatan.Repository
 {
@@ -66,13 +66,25 @@ namespace AnnetKatan.Repository
     /// </summary>
     /// <param name="directoryName">Name of the directory.</param>
     /// <returns>List of the images from the specified directory.</returns>
-    public ICollection<Image> ListImages(string directoryName)
+    public async Task<ICollection<Image>> ListImagesAsync(string directoryName)
     {
       CloudBlobContainer container = this.blobClient.GetContainerReference(this.containerName);
+      ICollection<Image> blobList = new List<Image>();
 
-      var blobList = container.ListBlobs(directoryName, true).Cast<ICloudBlob>();
+      BlobContinuationToken token = null;
+      do
+      {
+        BlobResultSegment resultSegment = await container.ListBlobsSegmentedAsync($"{directoryName}/", token);
+        token = resultSegment.ContinuationToken;
 
-      return blobList.Select(blob => new Image($"http://{this.customDomain}{blob.Uri.AbsolutePath}")).ToList();
+        foreach (IListBlobItem blob in resultSegment.Results)
+        {
+          blobList.Add(new Image($"http://{this.customDomain}{blob.Uri.AbsolutePath}"));
+        }
+
+      } while (token != null);
+
+      return blobList;
     }
   }
 }
