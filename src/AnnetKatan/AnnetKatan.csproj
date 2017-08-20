@@ -9,9 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\robots.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="BundlerMinifier.Core" Version="2.4.337" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.AzureAppServicesIntegration" Version="1.0.1" />
