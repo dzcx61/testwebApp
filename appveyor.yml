@@ -2,9 +2,19 @@
 #       build configuration       #
 #---------------------------------#
 
+# Build worker image
+image: Visual Studio 2017
+
 # build Configuration, i.e. Debug, Release, etc.
 configuration: Release
 
-# Restore NuGet packages before running MSBuild
+branches:
+  only:
+    - master
+    - dev
+    
+# Show .NET Core version and restore NuGet packages before running MSBuild
 before_build:
+  - dotnet --info
   - dotnet restore
+  - dotnet build

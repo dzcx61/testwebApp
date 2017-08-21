@@ -2,6 +2,11 @@ language: csharp
 dist: trusty
 mono: none
 dotnet: 2.0.0
+branches:
+  only:
+    - master
+    - dev
 script:
+  # - dotnet --info // 
   - dotnet restore
   - dotnet build

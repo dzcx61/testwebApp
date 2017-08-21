@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Threading.Tasks;
 
 namespace AnnetKatan.Controllers
 {
   public class HomeController : Controller
   {
-    private readonly ILogger logger;
     private readonly AppSettings appSettings;
 
     private const string ContainerName = "images";
@@ -20,25 +20,15 @@ namespace AnnetKatan.Controllers
     /// <summary>
     /// Initializes a new instance of the <see cref="HomeController"/> class.
     /// </summary>
-    public HomeController(IOptions<AppSettings> appSettings, ILogger<HomeController> logger)
+    public HomeController(IOptions<AppSettings> appSettings)
     {
-      this.logger = logger;
       this.appSettings = appSettings.Value;
       this.imageRepository = new AzureImageRepository(this.appSettings.AzureStorageConnectionString, this.appSettings.AzureStorageCustomDomain, ContainerName);
     }
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="HomeController"/> class.
-    /// </summary>
-    /// <param name="imageRepository">The image repository.</param>
-    //public HomeController(IImageRepository imageRepository)
-    //{
-    //  this.imageRepository = imageRepository;
-    //}
-
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-      var images = this.imageRepository.ListImages(HomeDirectoryName);
+      var images = await this.imageRepository.ListImagesAsync(HomeDirectoryName);
 
       return View(images);
     }
@@ -50,9 +40,9 @@ namespace AnnetKatan.Controllers
       return View(image);
     }
 
-    public IActionResult Portfolio()
+    public async Task<IActionResult> Portfolio()
     {
-      var images = this.imageRepository.ListImages(PortfolioDirectoryName);
+      var images = await this.imageRepository.ListImagesAsync(PortfolioDirectoryName);
 
       return View(images);
     }
