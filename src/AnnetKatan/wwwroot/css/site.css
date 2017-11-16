@@ -296,3 +296,10 @@ body {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
+
+.form-subscribe {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  text-align: left;
+}
