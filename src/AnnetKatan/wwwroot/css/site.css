@@ -11,6 +11,10 @@ a:hover {
   color: #fff;
 }
 
+a.btn {
+  text-shadow: none;
+}
+
 /* OBU: Higlight links inside white text */
 .text-white > a {
   color: #a9a9a9;
@@ -341,4 +345,8 @@ body {
 
 .icon-mail:before {
   content: "\EAF1";
+}
+
+.icon-calculator:before {
+  content: "\EA3C";
 }
