@@ -17,16 +17,16 @@
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
   </environment>
 
-  @*Azure Application Insights*@ 
+  @*Azure Application Insights*@
   @Html.Raw(JavaScriptSnippet.FullScript)
 
   @*Google Analytics*@
   <script>
     (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-96590143-1', 'auto');
@@ -37,23 +37,23 @@
 <body>
 
   <div class="container">
-  
-      <div class="header">
-        <div class="masthead clearfix">
-          <div class="masthead-brand">
-            <div class="brand-lg text-nowrap"><a asp-area="" asp-controller="Home" asp-action="Index">Annet Katan</a></div>
-            <div class="brand-sm text-nowrap">Photography &amp; Design</div>
-          </div>
 
-
-          <ul class="nav masthead-nav">
-            <li class="@ViewData["MenuAbout"]"><a asp-controller="Home" asp-action="About">about</a></li>
-            <li class="@ViewData["MenuPortfolio"]"><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
-            <li class="@ViewData["MenuPricing"]"><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
-            <li class="@ViewData["MenuContact"]"><a asp-area="" asp-controller="Home" asp-action="Contact">contact</a></li>
-          </ul>
+    <div class="header">
+      <div class="masthead clearfix">
+        <div class="masthead-brand">
+          <div class="brand-lg text-nowrap"><a asp-area="" asp-controller="Home" asp-action="Index">Annet Katan</a></div>
+          <div class="brand-sm text-nowrap">Photography &amp; Design</div>
         </div>
+
+
+        <ul class="nav masthead-nav">
+          <li class="@ViewData["MenuAbout"]"><a asp-controller="Home" asp-action="About">about</a></li>
+          <li class="@ViewData["MenuPortfolio"]"><a asp-area="" asp-controller="Home" asp-action="Portfolio">portfolio</a></li>
+          <li class="@ViewData["MenuPricing"]"><a asp-area="" asp-controller="Home" asp-action="Pricing">pricing</a></li>
+          <li class="@ViewData["MenuContact"]"><a asp-area="" asp-controller="Home" asp-action="Contact">contact</a></li>
+        </ul>
       </div>
+    </div>
 
     <div class="jumbotron">
       @RenderBody()
@@ -61,15 +61,31 @@
 
     <div class="footer">
       <div class="masthead clearfix">
-        <div class="masthead-brand">&copy; @DateTime.Now.Year - Annet Katan</div>
-        <div class="social">
-          <ul class="nav masthead-nav">
-            <li><a class="social" href="https://www.facebook.com/AnnetKatanPhotographer" target="_blank">b</a></li>
-            <li><a class="social" href="https://www.instagram.com/annet.katan.photography/" target="_blank">x</a></li>
-            <li><a class="social" href="https://www.youtube.com/channel/UCRasIeJOgHnXwh94tGNUKbA" target="_blank">r</a></li>
-            <li><a class="social" href="https://www.linkedin.com/in/annetkatan" target="_blank">j</a></li>
-          </ul>
+        <div class="masthead-brand">
+          <p>&copy; @DateTime.Now.Year - Annet Katan</p>
         </div>
+        <ul class="nav masthead-nav">
+          <li>
+            <a class="btn btn-footer" role="button" href="https://www.facebook.com/AnnetKatanPhotographer/">
+              <span class="icon icon-facebook-with-circle"></span>
+            </a>
+          </li>
+          <li>
+            <a class="btn btn-footer" role="button" href="https://www.instagram.com/annet.katan.photography/">
+              <span class="icon icon-instagram-with-circle"></span>
+            </a>
+          </li>
+          <li>
+            <a class="btn btn-footer" role="button" href="https://www.youtube.com/channel/UCRasIeJOgHnXwh94tGNUKbA/">
+              <span class="icon icon-youtube-with-circle"></span>
+            </a>
+          </li>
+          <li>
+            <a class="btn btn-footer" role="button" href="https://www.linkedin.com/in/annetkatan/">
+              <span class="icon icon-linkedin-with-circle"></span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
