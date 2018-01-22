@@ -58,7 +58,7 @@ namespace AnnetKatan.Repository
       string blobName = $"{directoryName}/{imageName}";
       CloudBlockBlob blob= container.GetBlockBlobReference(blobName);
 
-      return new Image($"http://{this.customDomain}{blob.Uri.AbsolutePath}");
+      return new Image(this.GetImageUri(blob));
     }
 
     /// <summary>
@@ -77,14 +77,19 @@ namespace AnnetKatan.Repository
         BlobResultSegment resultSegment = await container.ListBlobsSegmentedAsync($"{directoryName}/", token);
         token = resultSegment.ContinuationToken;
 
-        foreach (IListBlobItem blob in resultSegment.Results)
-        {
-          blobList.Add(new Image($"http://{this.customDomain}{blob.Uri.AbsolutePath}"));
+        foreach (ICloudBlob blob in resultSegment.Results)
+        {          
+          blobList.Add(new Image(this.GetImageUri(blob)));
         }
 
       } while (token != null);
 
       return blobList;
+    }
+
+    protected string GetImageUri(ICloudBlob blob)
+    {
+      return string.IsNullOrEmpty(this.customDomain) ? blob.Uri.AbsoluteUri : $"http://{this.customDomain}{blob.Uri.AbsolutePath}";
     }
   }
 }
